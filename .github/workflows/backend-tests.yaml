@@ -89,3 +89,6 @@ jobs:
 
       - name: Docker build 
         run: docker build -t image-backend:00 ./src/backend 
+
+      - name: Trivy image scan
+        run: trivy image --format table --ignore-unfixed --severity CRITICAL,HIGH backend:00
