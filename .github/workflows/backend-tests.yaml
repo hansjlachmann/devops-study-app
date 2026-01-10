@@ -85,4 +85,6 @@ jobs:
 
     steps:
       - name: Docker build 
-        run: docker build -t image-backend:00 . 
+        run: |
+          cd src/backend
+          docker build -t image-backend:00 . 
