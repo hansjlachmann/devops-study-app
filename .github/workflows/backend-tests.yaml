@@ -84,7 +84,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Docker build 
         run: |
           cd src/backend
-          docker build -t image-backend:00 . 
+          docker build -t image-backend:00 ./src/backend 
