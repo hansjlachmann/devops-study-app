@@ -80,6 +80,7 @@ jobs:
 
   build_docker:
     name: Image build for scanning with Trivy
+    needs: test
     runs-on: ubuntu-latest
     defaults:
       run:
