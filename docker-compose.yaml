@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+    backend:
+      build:
+        context: ./src/backend
+        dockerfile: Dockerfile
+      ports:
+        - "22112:22112"
+      container_name: study-tracker-api
+      restart: unless-stopped
+      networks:
+        - app-network
+
+    frontend:
+      build:
+        context: ./src/frontend
+        dockerfile: Dockerfile
+      ports:
+        - "22111:22111"
+      container_name: study-tracker-frontend
+      restart: unless-stopped
+      depends_on:
+        - backend
+      networks:
+        - app-network
+
+networks:
+    app-network:
+      driver: bridge
+

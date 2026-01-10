@@ -78,5 +78,13 @@ jobs:
           recreate: true
           path: code-coverage-results.md
 
+  build_docker:
+    name: Image build for scanning with Trivy
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src/backend
 
-
+    steps:
+      - name: Docker build 
+        run: docker build -t image-backend:00 . 
