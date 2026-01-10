@@ -82,9 +82,6 @@ jobs:
     name: Image build for scanning with Trivy
     needs: test
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./src/backend
 
     steps:
       - name: Docker build 
