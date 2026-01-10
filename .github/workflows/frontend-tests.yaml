@@ -52,7 +52,7 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          uv run pytest frontend-tests/ -v --cov=src/frontend --cov-report=xml --cov-fail-under=80
+          uv run pytest tests/ -v --cov=src/frontend --cov-report=xml --cov-fail-under=80
 
       - name: Upload coverage report frontend
         uses: actions/upload-artifact@v4
