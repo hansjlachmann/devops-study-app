@@ -88,6 +88,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Docker build 
-        run: |
-          cd src/backend
-          docker build -t image-backend:00 ./src/backend 
+        run: docker build -t image-backend:00 ./src/backend 
