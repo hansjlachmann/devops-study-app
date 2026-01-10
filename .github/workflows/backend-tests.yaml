@@ -89,6 +89,10 @@ jobs:
 
       - name: Docker build 
         run: docker build -t image-backend:00 ./src/backend 
+      
+      - name: Install Trivy
+        run: |
+          curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin
 
       - name: Trivy image scan
-        run: trivy image --format table --ignore-unfixed --severity CRITICAL,HIGH backend:00
+        run: trivy image --format table --ignore-unfixed --severity CRITICAL,HIGH image-backend:00
