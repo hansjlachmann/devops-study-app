@@ -122,7 +122,7 @@ def health():
 
 def main():
     """Entry point for the application when run as a script"""
-    logger.info("Starting DevOps Study Timer Frontend")
+    logger.info("Starting DevOps Study Timer Frontend!")
     app.run(host=app.config["HOST"], port=app.config["PORT"], debug=app.config["DEBUG"])
 
 
