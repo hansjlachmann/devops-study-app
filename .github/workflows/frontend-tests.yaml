@@ -43,8 +43,8 @@ jobs:
 
       - name: Lint with Ruff
         run: |
-          uv run ruff check --output-format=github --target-version=py313 src frontend-tests
-          uv run ruff format --diff --check --target-version=py313 src frontend-tests
+          uv run ruff check --output-format=github --target-version=py313 src tests
+          uv run ruff format --diff --check --target-version=py313 src tests
 
           #      - name: Run Backend Tests
           #        run: |
@@ -52,12 +52,12 @@ jobs:
 
       - name: Run tests with coverage
         run: |
-          uv run pytest frontend-tests/ -v --cov=src/frontend --cov-report=xml --cov-fail-under=80
+          uv run pytest tests/ -v --cov=src/frontend --cov-report=xml --cov-fail-under=80
 
-      - name: Upload coverage report frontend
+      - name: Upload coverage report
         uses: actions/upload-artifact@v4
         with:
-          name: coverage-report-frontend
+          name: frontend-coverage-report
           path: ./src/frontend/coverage.xml
           retention-days: 7
         if: ${{ always() }}
