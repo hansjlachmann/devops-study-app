@@ -16,4 +16,4 @@ jobs:
           # token: ${{ secrets.GITHUB_TOKEN }}
           token: "${{ secrets.DEVOPS_STUDY_APP }}"
           config-file: release-please-config-frontend.json
-          manifest-file: .release-please-manifest-frontend.json
+          manifest-file: release-please-manifest-frontend.json
