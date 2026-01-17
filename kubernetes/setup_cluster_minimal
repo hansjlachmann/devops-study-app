@@ -1,0 +1,21 @@
+#!/bin/bash
+
+CLUSTER_NAME="minimal-cluster"
+
+if k3d cluster list | grep -q "$CLUSTER_NAME"; then
+  echo -e "${YELLOW}Cluster $CLUSTER_NAME already exists.${NC}"
+  read -p "Do you want to delete and recreate it? (y/n): " -r
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "Deleting existing cluster..."
+    k3d cluster delete "$CLUSTER_NAME"
+  else
+    echo "Using existing cluster."
+  fi
+fi
+
+# Create cluster if it doesn't exist
+if ! k3d cluster list | grep -q "$CLUSTER_NAME"; then
+  echo "Creating k3d cluster using config file..."
+  k3d cluster create "$CLUSTER_NAME"
+  echo -e "Cluster created successfully!"
+fi

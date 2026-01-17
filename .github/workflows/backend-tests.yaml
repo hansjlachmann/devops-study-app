@@ -103,3 +103,9 @@ jobs:
           name: trivy-scan-report
           path: trivy-scan.txt
           retention-days: 7
+
+  trigger_e2e:
+    name: Trigger E2E Tests
+    needs: test
+    if: success()
+    uses: ./.github/workflows/e2e-tests.yaml
