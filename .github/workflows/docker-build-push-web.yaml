@@ -8,7 +8,7 @@ env:
   BACKEND_IMAGE_NAME: ${{ github.repository_owner }}/study-app-web
 jobs:
   build-and-push-frontend:
-    name: Build and Push frontend
+    name: Build and push frontend
     runs-on: ubuntu-latest
     # Only run for frontend tags
     if: contains(github.ref, 'frontend')
