@@ -7,10 +7,10 @@ env:
   REGISTRY: ghcr.io
   BACKEND_IMAGE_NAME: ${{ github.repository_owner }}/study-app-web
 jobs:
-  build-and-push-backend:
-    name: Build and Push frontend
+  build-and-push-frontend:
+    name: Build and push frontend
     runs-on: ubuntu-latest
-    # Only run for backend tags
+    # Only run for frontend tags
     if: contains(github.ref, 'frontend')
     permissions:
       contents: read
@@ -46,7 +46,7 @@ jobs:
   # trigger after build and push
   trigger_gitops:
     name: Trigger GitOps
-    needs: [build-and-push-backend, build-and-push-frontend]
+    needs: [build-and-push-frontend]
     # Run if either build job succeeded (the other one will be skipped based on the tag)
     if: always() && (needs.build-and-push-backend.result == 'success' || needs.build-and-push-frontend.result == 'success')
     uses: ./.github/workflows/update-gitops.yml
