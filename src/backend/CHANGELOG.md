@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/hansjlachmann/devops-study-app/compare/backend-v0.2.1...backend-v0.2.2) (2026-01-18)
+
+
+### Bug Fixes
+
+* **gh-actions:** check gh actions workflow ([#22](https://github.com/hansjlachmann/devops-study-app/issues/22)) ([ab8a1e7](https://github.com/hansjlachmann/devops-study-app/commit/ab8a1e7e7c4485b29bbac20b84b0146b63bcde27))
+
 ## [0.2.1](https://github.com/hansjlachmann/devops-study-app/compare/backend-v0.2.0...backend-v0.2.1) (2026-01-18)
 
 
