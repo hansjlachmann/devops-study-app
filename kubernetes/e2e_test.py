@@ -219,10 +219,10 @@ class K8sTestEnvironment:
         # Apply using kubectl apply and kustomize
         self.run_command(f"kubectl apply -k {kustomize_path}")
 
-        # Wait for pods to be ready
-        logger.info("Waiting for pods to be ready...")
+        # Wait for deployments to roll out (deployments exist immediately, pods may take time to create)
+        logger.info("Waiting for deployments to be available...")
         self.run_command(
-            "kubectl wait --for=condition=Ready pods --all -n study-app --timeout=120s"
+            "kubectl wait --for=condition=Available deployment --all -n study-app --timeout=120s"
         )
 
         # Get the service URLs
