@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 # Create FastAPI application
 app = FastAPI(
     title=APP_NAME,
-    description="API for tracking study time for DevOps studies - Modified by Hans J. Lachmann",
+    description="API for tracking study time for DevOps studies - Modified by Hans J. Lachmann 2026",
 )
 
 # Configure CORS
