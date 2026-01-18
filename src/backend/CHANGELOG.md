@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.3](https://github.com/hansjlachmann/devops-study-app/compare/backend-v0.2.2...backend-v0.2.3) (2026-01-18)
+
+
+### Bug Fixes
+
+* **gh-actions:** trigger release ([#26](https://github.com/hansjlachmann/devops-study-app/issues/26)) ([5986f0b](https://github.com/hansjlachmann/devops-study-app/commit/5986f0be91f113a1aae3bb9c4a67aadce7f2eaad))
+
 ## [0.2.2](https://github.com/hansjlachmann/devops-study-app/compare/backend-v0.2.1...backend-v0.2.2) (2026-01-18)
 
 
