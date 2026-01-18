@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/hansjlachmann/devops-study-app/compare/backend-v0.2.0...backend-v0.2.1) (2026-01-18)
+
+
+### Bug Fixes
+
+* **gh-actions:** trigger new gh workflow with comment in main.py ([#19](https://github.com/hansjlachmann/devops-study-app/issues/19)) ([538b2ae](https://github.com/hansjlachmann/devops-study-app/commit/538b2ae6b773eea0a6a991d05e693ac1fefab30e))
+
 ## [0.2.0](https://github.com/hansjlachmann/devops-study-app/compare/backend-v0.1.0...backend-v0.2.0) (2026-01-11)
 
 
